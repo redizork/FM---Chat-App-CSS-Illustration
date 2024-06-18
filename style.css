@@ -1,0 +1,346 @@
+/* Rubik Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Variables */
+:root {
+  --bg-color: hsl(0, 0%, 98%);
+  --right-shape: hsl(300, 29%, 97%);
+  --app-bg-color: hsl(270, 20%, 96%);
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Left & Right Shapes */
+
+.left-shape {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  z-index: -1;
+  border-bottom-right-radius: 50% 30%;
+  border-bottom-left-radius: 50% 30%;
+  background: linear-gradient(
+    to bottom,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  width: 50rem;
+  height: 90vh;
+}
+
+.right-shape {
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  border-top-right-radius: 50% 30%;
+  border-top-left-radius: 50% 30%;
+  background-color: var(--right-shape);
+  width: 50rem;
+  height: 90vh;
+}
+
+/* Main App */
+
+.main {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  max-width: 110rem;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+/* App Box */
+.app-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 35rem;
+  /* height: 70rem; */
+  background-color: #fff;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 10000;
+}
+
+.app-content {
+  background: var(--app-bg-color);
+  height: 100%;
+  border-radius: 2rem;
+}
+.app-header-top-shape {
+  width: 18rem;
+  height: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #fff;
+  position: absolute;
+  top: 15px;
+  left: 25%;
+  z-index: 1000;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  border-radius: 2rem 2rem 0.5rem 0.5rem;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.fa-solid {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.app-header img {
+  width: 3.5rem;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.app-header-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header-name h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: white;
+}
+
+.app-header-name p {
+  font-size: 1.2rem;
+  color: hsl(276, 100%, 81%);
+}
+
+.fa-ellipsis-vertical {
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 4.5rem;
+  right: 2.5rem;
+}
+
+.app-chat {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.app-chat:nth-child(5) {
+  align-self: flex-end;
+}
+
+.app-chat-message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  max-width: 70%;
+  display: flex;
+  gap: 1rem;
+}
+
+.app-chat-message p {
+  font-size: 1.2rem;
+  color: hsl(276, 55%, 52%);
+  line-height: 150%;
+}
+
+.app-chat-message img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+}
+
+.app-chat-message:nth-child(1),
+.app-chat-message:nth-child(2),
+.app-chat-message:nth-child(6) {
+  background-color: #ededed;
+}
+
+.app-chat-message:nth-child(3),
+.app-chat-message:nth-child(4),
+.app-chat-message:nth-child(5) {
+  align-self: flex-end;
+}
+
+.app-chat-message:nth-child(3) {
+  padding: 0;
+}
+
+.app-chat-message:nth-child(4),
+.app-chat-message:nth-child(4) p {
+  background-color: #fff;
+  color: black;
+}
+.app-chat-message:nth-child(5),
+.app-chat-message:nth-child(5) p {
+  background-color: #fff;
+  color: black;
+}
+
+.app-chat-message:nth-child(7),
+.app-chat-message:nth-child(8) {
+  background: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+
+.app-chat-message:nth-child(8) {
+  margin-bottom: 0.5rem;
+}
+
+.walk-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.price {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 4rem;
+}
+
+.fa-circle {
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.app-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.app-chat-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+}
+
+.app-chat-input i {
+  cursor: pointer;
+  background-color: hsl(271, 36%, 24%);
+  padding: 1rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.app-chat-input i:hover {
+  background: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+
+.app-chat-input input::placeholder {
+  font-family: inherit;
+  opacity: 0.6;
+  font-size: 1.4rem;
+}
+
+/* Text Box */
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: hsl(271, 36%, 24%);
+  z-index: 50;
+}
+
+p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: hsl(270, 7%, 64%);
+  line-height: 150%;
+  max-width: 50rem;
+  z-index: 50;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5rem 0;
+    grid-template-columns: 1fr;
+  }
+
+  .text-box {
+    margin-top: 6rem;
+    align-items: center;
+  }
+
+  .text-box p {
+    text-align: center;
+    padding-bottom: 6rem;
+    max-width: 40rem;
+  }
+}
